@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>My Learning Profile</title>
+    <style>
+        /* Add your CSS styles here */
+    </style>
+</head>
+<body>
+    <h1>My Learning Profile</h1>
+
+    <h2>Courses In Progress</h2>
+    <ul id="coursesInProgress">
+        <!-- This list will be populated with your in-progress courses -->
+    </ul>
+
+    <h2>Completed Courses</h2>
+    <ul id="completedCourses">
+        <!-- This list will be populated with your completed courses -->
+    </ul>
+
+    <h2>Add a Course</h2>
+    <form id="addCourseForm">
+        <label for="courseName">Course Name:</label>
+        <input type="text" id="courseName" required>
+        <label for="courseProgress">Progress (%):</label>
+        <input type="number" id="courseProgress" min="0" max="100" required>
+        <button type="submit">Add Course</button>
+    </form>
+
+    <script>
+        const addCourseForm = document.getElementById('addCourseForm');
+        const courseNameInput = document.getElementById('courseName');
+        const courseProgressInput = document.getElementById('courseProgress');
+        const coursesInProgressList = document.getElementById('coursesInProgress');
+        const completedCoursesList = document.getElementById('completedCourses');
+
+        addCourseForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const courseName = courseNameInput.value;
+            const courseProgress = courseProgressInput.value;
+
+            // Create a list item for the in-progress course with progress info
+            const listItem = document.createElement('li');
+            listItem.innerHTML = `${courseName} (Progress: ${courseProgress}%)`;
+
+            // Add a button to move the course to completed
+            const completeButton = document.createElement('button');
+            completeButton.textContent = 'Complete';
+            completeButton.addEventListener('click', function () {
+                // Move the course from in-progress to completed
+                coursesInProgressList.removeChild(listItem);
+                completedCoursesList.appendChild(listItem);
+
+                // Remove the "Complete" button
+                listItem.removeChild(completeButton);
+            });
+
+            listItem.appendChild(completeButton);
+
+            // Add the course to the in-progress list
+            coursesInProgressList.appendChild(listItem);
+
+            // Clear the input fields
+            courseNameInput.value = '';
+            courseProgressInput.value = '';
+        });
+    </script>
+</body>
+</html>
+
