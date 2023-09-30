@@ -7,19 +7,29 @@
         body {
             margin: 0;
             padding: 0;
-            overflow: hidden;
             font-family: Arial, sans-serif;
             color: green; /* Change text color to white for better readability */
+            overflow: hidden; /* Hide vertical scrollbar */
         }
 
-        /* Add styles for the YouTube video to make it cover the entire page */
-        iframe {
+        /* Add styles for the video container to make it cover the entire page */
+        #video-container {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: -1;
+            overflow: hidden; /* Hide any overflow outside the viewport */
+        }
+
+        /* Style the embedded iframe video */
+        iframe {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0.7; /* Adjust opacity for better text readability */
         }
 
         /* Add styles for headings and paragraphs */
@@ -45,8 +55,11 @@
     </style>
 </head>
 <body>
-    <!-- Add an iframe to embed the YouTube video as the background -->
-    <iframe src="https://www.youtube.com/embed/lXINtSFRpV0?autoplay=1&mute=1&controls=0&loop=1&playlist=lXINtSFRpV0" frameborder="0" allowfullscreen></iframe>
+    <!-- Add a div container for the video -->
+    <div id="video-container">
+        <!-- Add an iframe to embed the YouTube video as the background -->
+        <iframe src="https://www.youtube.com/embed/lXINtSFRpV0?autoplay=1&mute=1&controls=0&loop=1&playlist=lXINtSFRpV0" frameborder="0" allowfullscreen></iframe>
+    </div>
 
     <h1>Machine Learning and AI Learning Plan</h1>
     <p>To build a strong understanding of machine learning, AI, and coding using the MIT OpenCourseWare resources, follow this structured plan:</p>
