@@ -18,7 +18,7 @@
         .video-container {
             position: relative;
             width: 100%;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio (height 56.25% of width) */
+            padding-top: 56.25%; /* 16:9 aspect ratio (height 56.25% of width) */
             overflow: hidden;
         }
         
@@ -33,9 +33,9 @@
 </head>
 <body>
     <div class="banner">
-        <!-- Embed the YouTube video in the banner -->
+        <!-- Embed the YouTube video in the banner with autoplay and loop attributes -->
         <div class="video-container">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/lXINtSFRpV0?si=Uk5HZGe9DaOZYwJg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/lXINtSFRpV0?autoplay=1&mute=1&loop=1&playlist=lXINtSFRpV0" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
         </div>
     </div>
 </body>
