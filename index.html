@@ -7,12 +7,21 @@
         body {
             margin: 0;
             padding: 0;
-            background: url('background.jpg') no-repeat center center fixed;
-            background-size: cover;
-            background-attachment: fixed;
+            overflow: hidden;
             font-family: Arial, sans-serif;
-            color: green; /* Add text color to make content readable */
+            color: green; /* Change text color to white for better readability */
         }
+
+        /* Add styles for the YouTube video to make it cover the entire page */
+        iframe {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
         /* Add styles for headings and paragraphs */
         h1 {
             text-align: center;
@@ -24,28 +33,20 @@
         p {
             padding: 10px;
         }
+
         /* Add additional CSS for links */
         a {
-            color: green;
+            color: green; /* Change link color */
             text-decoration: none;
         }
         a:hover {
             text-decoration: underline;
         }
-        /* Add styles for the iframe container */
-        #video-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1; /* Place the video behind other content */
-        }
     </style>
 </head>
 <body>
     <!-- Add an iframe to embed the YouTube video as the background -->
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/lXINtSFRpV0?si=0VCv2stSZDxnBEB6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/lXINtSFRpV0?autoplay=1&mute=1&controls=0&loop=1&playlist=lXINtSFRpV0" frameborder="0" allowfullscreen></iframe>
 
     <h1>Machine Learning and AI Learning Plan</h1>
     <p>To build a strong understanding of machine learning, AI, and coding using the MIT OpenCourseWare resources, follow this structured plan:</p>
